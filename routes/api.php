@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,4 +22,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/all-products',[ProductController::class,'index']);
 Route::get('/product/{id}',[ProductController::class,'show']);
+Route::post('/payment',[PaymentController::class,'initiatePayment']);
+
 
